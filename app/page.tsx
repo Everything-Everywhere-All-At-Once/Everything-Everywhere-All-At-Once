@@ -1,65 +1,125 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import HeroAscii from "@/components/ui/hero-ascii";
+import { categories, totalTools } from "@/lib/tools";
 
 export default function Home() {
+  const liveCount = categories.reduce(
+    (acc, cat) => acc + cat.tools.filter((t) => t.status === "live").length,
+    0
+  );
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="min-h-screen text-[#e4e4e7]">
+
+      {/* ── Nav ── */}
+      <nav className="sticky top-0 z-50 border-b border-[#1a1a1a] bg-[#0d0d0d]/98 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-5 h-12 flex items-center gap-6">
+          <Link href="/" className="text-eeaao font-black text-sm tracking-[0.2em] font-mono shrink-0">
+            EEAAO
+          </Link>
+          <div className="flex-1" />
+          <div className="flex items-center gap-1 text-[11px] font-mono">
+            <Link href="/library"    className="px-3 py-1.5 text-[#52525b] hover:text-[#a1a1aa] transition-colors tracking-widest">/library</Link>
+            <Link href="/community"  className="px-3 py-1.5 text-[#52525b] hover:text-[#00E5FF] transition-colors tracking-widest">/community</Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* ── Hero ── */}
+      <HeroAscii />
+
+      {/* ── Category grid ── */}
+      <section id="tools" className="max-w-7xl mx-auto px-5 py-16">
+        <div className="mb-10">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-4 h-px bg-[#FF2D87]/60" />
+            <div className="w-4 h-px bg-[#00E5FF]/60" />
+            <div className="w-4 h-px bg-[#FFD60A]/60" />
+          </div>
+          <p className="text-[#3f3f46] text-xs font-mono tracking-widest">
+            {liveCount} tools &nbsp;·&nbsp; {categories.length} categories &nbsp;·&nbsp; 100% browser-native
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          {categories.map((cat) => {
+            const live = cat.tools.filter((t) => t.status === "live").length;
+            return (
+              <Link
+                key={cat.id}
+                href={`/tools/${cat.id}`}
+                className="group relative overflow-hidden rounded-lg border border-[#1e1e1e] bg-[#111111] p-6 transition-all duration-200 hover:border-opacity-50"
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.borderColor = `${cat.accent}55`;
+                  el.style.backgroundColor = `${cat.accent}08`;
+                  el.style.boxShadow = `0 0 28px ${cat.accent}18, inset 0 0 20px ${cat.accent}06`;
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.borderColor = "#1e1e1e";
+                  el.style.backgroundColor = "#111111";
+                  el.style.boxShadow = "none";
+                }}
+              >
+                {/* Accent strip */}
+                <div
+                  className="absolute inset-y-0 left-0 w-[3px] rounded-l opacity-30 group-hover:opacity-60 transition-opacity duration-200"
+                  style={{ backgroundColor: cat.accent }}
+                />
+
+                {/* Icon + count */}
+                <div className="flex items-start justify-between mb-4 pl-1">
+                  <span className="text-2xl leading-none" style={{ color: cat.accent }}>
+                    {cat.icon}
+                  </span>
+                  <span
+                    className="text-[10px] font-mono px-2 py-0.5 rounded"
+                    style={{ backgroundColor: `${cat.accent}15`, color: cat.accent }}
+                  >
+                    {live} tools
+                  </span>
+                </div>
+
+                {/* Label */}
+                <h2 className="text-sm font-bold text-[#e4e4e7] mb-2 pl-1 leading-tight">
+                  {cat.label}
+                </h2>
+
+                {/* Description */}
+                <p className="text-[11px] text-[#52525b] leading-relaxed pl-1">
+                  {cat.description}
+                </p>
+
+                {/* Arrow */}
+                <div
+                  className="mt-4 pl-1 text-[10px] font-mono tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                  style={{ color: cat.accent }}
+                >
+                  explore →
+                </div>
+              </Link>
+            );
+          })}
         </div>
-      </main>
+      </section>
+
+      {/* ── Footer ── */}
+      <footer className="border-t border-[#1a1a1a] py-6 px-5">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] font-mono text-[#2a2a2a]">
+          <div className="flex items-center gap-2">
+            <span className="text-eeaao font-black">EEAAO</span>
+            <span>—</span>
+            <span>everything everywhere all at once · {totalTools} tools · no uploads · no accounts</span>
+          </div>
+          <div className="flex gap-5">
+            <Link href="/library"   className="hover:text-[#52525b] transition-colors">/library</Link>
+            <Link href="/community" className="hover:text-[#52525b] transition-colors">/community</Link>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
