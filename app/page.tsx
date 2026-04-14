@@ -21,8 +21,8 @@ export default function Home() {
           </Link>
           <div className="flex-1" />
           <div className="flex items-center gap-1 text-[11px] font-mono">
-            <Link href="/library"    className="px-3 py-1.5 text-[#52525b] hover:text-[#a1a1aa] transition-colors tracking-widest">/library</Link>
-            <Link href="/community"  className="px-3 py-1.5 text-[#52525b] hover:text-[#00E5FF] transition-colors tracking-widest">/community</Link>
+            <Link href="/library"    className="px-3 py-1.5 text-[#a1a1aa] hover:text-[#e4e4e7] transition-colors tracking-widest">/library</Link>
+            <Link href="/community"  className="px-3 py-1.5 text-[#a1a1aa] hover:text-[#00E5FF] transition-colors tracking-widest">/community</Link>
           </div>
         </div>
       </nav>
@@ -38,7 +38,7 @@ export default function Home() {
             <div className="w-4 h-px bg-[#00E5FF]/60" />
             <div className="w-4 h-px bg-[#FFD60A]/60" />
           </div>
-          <p className="text-[#3f3f46] text-xs font-mono tracking-widest">
+          <p className="text-[#71717a] text-xs font-mono tracking-widest">
             {liveCount} tools &nbsp;·&nbsp; {categories.length} categories &nbsp;·&nbsp; 100% browser-native
           </p>
         </div>

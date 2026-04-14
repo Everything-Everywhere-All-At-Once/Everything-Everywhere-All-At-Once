@@ -44,7 +44,7 @@ export function ToolShell({
             </span>
           </div>
           <h1 className="text-2xl font-bold text-[#e4e4e7] tracking-tight mb-1">{title}</h1>
-          <p className="text-sm text-[#71717a]">{description}</p>
+          <p className="text-sm text-[#a1a1aa]">{description}</p>
         </div>
       </header>
 

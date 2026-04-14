@@ -1,7 +1,3 @@
-'use client';
-
-import { SpecialText } from '@/components/ui/special-text';
-
 export default function HeroAscii() {
   return (
     <section className="relative w-full overflow-hidden" style={{ minHeight: '88vh' }}>
@@ -20,15 +16,9 @@ export default function HeroAscii() {
             {/* Main title */}
             <h1 className="font-black leading-none mb-8 flex flex-col gap-1"
               style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', letterSpacing: '-0.03em' }}>
-              <SpecialText className="chroma-pink text-[#FF2D87]" delay={0} speed={14}>
-                EVERYTHING
-              </SpecialText>
-              <SpecialText className="chroma-cyan text-[#00E5FF]" delay={0} speed={14}>
-                EVERYWHERE
-              </SpecialText>
-              <SpecialText className="chroma-gold text-[#FFD60A]" delay={0} speed={14}>
-                ALL AT ONCE
-              </SpecialText>
+              <span style={{ color: '#FF2D87' }}>EVERYTHING</span>
+              <span style={{ color: '#00E5FF' }}>EVERYWHERE</span>
+              <span style={{ color: '#FFD60A' }}>ALL AT ONCE</span>
             </h1>
 
             {/* Tagline */}
