@@ -5,7 +5,7 @@ import { ToolShell } from "@/components/tool-shell";
 import { FFmpeg } from "@ffmpeg/ffmpeg";
 import { fetchFile, toBlobURL } from "@ffmpeg/util";
 
-const accent = "#00E5FF";
+const accent = "#00FFFF";
 
 function formatTime(s: number) {
   const m = Math.floor(s / 60);
@@ -130,7 +130,6 @@ export default function AudioTrimPage() {
           <div className="font-mono text-sm text-[#e4e4e7]">{file.name} <span className="text-[#71717a]">— {formatTime(duration)}</span></div>
         ) : (
           <>
-            <div className="text-2xl mb-2 opacity-20">✂</div>
             <div className="text-sm text-[#71717a] font-mono">drop audio file or click to browse</div>
           </>
         )}
@@ -142,13 +141,13 @@ export default function AudioTrimPage() {
           <div className="bg-[#141414] border border-[#2a2a2a] rounded p-4">
             <div className="flex justify-between text-[10px] text-[#71717a] font-mono mb-3">
               <span>0:00</span>
-              <span className="text-[#00E5FF]">{formatTime(start)} → {formatTime(end)} ({formatTime(trimDuration)})</span>
+              <span className="text-[#00FFFF]">{formatTime(start)} → {formatTime(end)} ({formatTime(trimDuration)})</span>
               <span>{formatTime(duration)}</span>
             </div>
 
             {/* Visual range bar */}
             <div className="relative h-10 bg-[#0d0d0d] rounded overflow-hidden border border-[#2a2a2a] mb-4">
-              <div className="absolute inset-y-0 bg-[#00E5FF]/10 border-x border-[#00E5FF]/60 transition-all"
+              <div className="absolute inset-y-0 bg-[#00FFFF]/10 border-x border-[#00FFFF]/60 transition-all"
                 style={{ left: `${(start / duration) * 100}%`, right: `${100 - (end / duration) * 100}%` }} />
               {/* Mini waveform bars */}
               {Array.from({ length: 80 }).map((_, i) => (
@@ -162,7 +161,7 @@ export default function AudioTrimPage() {
               <label className="text-[10px] text-[#71717a] font-mono tracking-widest uppercase block mb-1">start — {formatTime(start)}</label>
               <input type="range" min={0} max={duration} step={0.1} value={start}
                 onChange={(e) => setStart(Math.min(Number(e.target.value), end - 0.5))}
-                className="w-full accent-[#00E5FF] bg-[#2a2a2a] h-1 rounded appearance-none cursor-pointer" />
+                className="w-full accent-[#00FFFF] bg-[#2a2a2a] h-1 rounded appearance-none cursor-pointer" />
             </div>
 
             {/* End slider */}
@@ -170,13 +169,13 @@ export default function AudioTrimPage() {
               <label className="text-[10px] text-[#71717a] font-mono tracking-widest uppercase block mb-1">end — {formatTime(end)}</label>
               <input type="range" min={0} max={duration} step={0.1} value={end}
                 onChange={(e) => setEnd(Math.max(Number(e.target.value), start + 0.5))}
-                className="w-full accent-[#00E5FF] bg-[#2a2a2a] h-1 rounded appearance-none cursor-pointer" />
+                className="w-full accent-[#00FFFF] bg-[#2a2a2a] h-1 rounded appearance-none cursor-pointer" />
             </div>
           </div>
 
           {/* Controls */}
           <div className="flex gap-3">
-            <button onClick={togglePlay} className="px-4 py-2.5 text-xs font-mono border rounded border-[#2a2a2a] text-[#71717a] hover:border-[#00E5FF] hover:text-[#00E5FF] transition-all">
+            <button onClick={togglePlay} className="px-4 py-2.5 text-xs font-mono border rounded border-[#2a2a2a] text-[#71717a] hover:border-[#00FFFF] hover:text-[#00FFFF] transition-all">
               {isPlaying ? "⏸ pause" : "▶ preview"}
             </button>
             <button onClick={trim} disabled={status === "loading" || status === "trimming"}

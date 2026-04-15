@@ -113,7 +113,7 @@ export default function AudioConvertPage() {
     if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
-  const accent = "#00E5FF";
+  const accent = "#00FFFF";
 
   return (
     <ToolShell
@@ -150,7 +150,6 @@ export default function AudioConvertPage() {
           </div>
         ) : (
           <div>
-            <div className="text-3xl mb-3 opacity-20">♫</div>
             <div className="text-sm text-[#71717a] font-mono">drop audio file here or click to browse</div>
             <div className="text-xs text-[#3f3f46] mt-2">MP3 · WAV · FLAC · OGG · AAC · M4A · AIFF</div>
           </div>

@@ -47,7 +47,7 @@
   --card-foreground: #e4e4e7;
   --popover: #1a1a1a;
   --popover-foreground: #e4e4e7;
-  --primary: #00E5FF;
+  --primary: #00FFFF;
   --primary-foreground: #0d0d0d;
   --secondary: #1a1a1a;
   --secondary-foreground: #e4e4e7;
@@ -58,19 +58,19 @@
   --destructive: #EF4444;
   --border: #2a2a2a;
   --input: #1a1a1a;
-  --ring: #00E5FF;
+  --ring: #00FFFF;
   --radius: 0.5rem;
   --sidebar: #141414;
   --sidebar-foreground: #e4e4e7;
-  --sidebar-primary: #00E5FF;
+  --sidebar-primary: #00FFFF;
   --sidebar-primary-foreground: #0d0d0d;
   --sidebar-accent: #1a1a1a;
   --sidebar-accent-foreground: #e4e4e7;
   --sidebar-border: #2a2a2a;
-  --sidebar-ring: #00E5FF;
+  --sidebar-ring: #00FFFF;
 
   /* Category accent colors */
-  --color-audio: #00E5FF;
+  --color-audio: #00FFFF;
   --color-image: #A855F7;
   --color-video: #F97316;
   --color-cyber: #22C55E;
@@ -104,7 +104,7 @@
 
 /* Gradient text — logo & accents */
 .text-eeaao {
-  background: linear-gradient(90deg, #FF2D87 0%, #00E5FF 50%, #FFD60A 100%);
+  background: linear-gradient(90deg, #FF3399 0%, #00FFFF 50%, #FFFF00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -162,7 +162,7 @@
   display: inline-block;
   width: 8px;
   height: 1em;
-  background: #00E5FF;
+  background: #00FFFF;
   vertical-align: text-bottom;
   animation: blink 1s step-end infinite;
   margin-left: 2px;

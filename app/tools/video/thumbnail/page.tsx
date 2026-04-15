@@ -78,7 +78,7 @@ export default function ThumbnailPage() {
         style={{ borderColor: isDragging ? accent : "#2a2a2a", backgroundColor: isDragging ? `${accent}08` : "transparent" }}>
         <input ref={fileInputRef} type="file" accept="video/*" className="hidden" onChange={e => { const f = e.target.files?.[0]; if (f) handleFile(f); }} />
         {file ? <div className="font-mono text-sm text-[#e4e4e7]">{file.name}</div>
-          : <><div className="text-2xl mb-2 opacity-20">⬡</div><div className="text-sm text-[#71717a] font-mono">drop video or click to browse</div></>}
+          : <><div className="text-sm text-[#71717a] font-mono">drop video or click to browse</div></>}
       </div>
 
       {file && (

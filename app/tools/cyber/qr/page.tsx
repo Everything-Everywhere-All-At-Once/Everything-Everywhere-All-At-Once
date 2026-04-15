@@ -162,7 +162,6 @@ export default function QrPage() {
               className="border border-dashed rounded p-10 text-center cursor-pointer transition-all"
               style={{ borderColor: isDragging ? accent : "#2a2a2a", backgroundColor: isDragging ? `${accent}08` : "transparent" }}>
               <input ref={fileInputRef} type="file" accept="image/*" className="hidden" onChange={e => { const f = e.target.files?.[0]; if (f) readQr(f); }} />
-              <div className="text-2xl mb-2 opacity-20">⬡</div>
               <div className="text-sm text-[#71717a] font-mono">drop QR code image or click to browse</div>
             </div>
 

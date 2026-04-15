@@ -158,8 +158,7 @@ export default function DocxToPdfPage() {
             onChange={e => { const f = e.target.files?.[0]; if (f) loadFile(f); }} />
           {file
             ? <div className="font-mono text-sm text-[#e4e4e7]">{file.name} · {(file.size / 1024).toFixed(0)} KB</div>
-            : <><div className="text-2xl mb-2 opacity-20">⬡</div>
-              <div className="text-sm text-[#71717a] font-mono">drop .docx file or click to browse</div>
+            : <><div className="text-sm text-[#71717a] font-mono">drop .docx file or click to browse</div>
               <div className="text-xs text-[#3f3f46] mt-1">.docx and .doc formats supported</div></>}
         </div>
 

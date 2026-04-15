@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Required for @xenova/transformers WASM loading
+  webpack: (config) => {
+    config.resolve.fallback = { ...config.resolve.fallback, fs: false };
+    return config;
+  },
   async headers() {
     return [
       {

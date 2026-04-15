@@ -1,28 +1,52 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import HeroAscii from "@/components/ui/hero-ascii";
 import { categories, totalTools } from "@/lib/tools";
 
+type RecentTool = { title: string; href: string; accent: string; category: string };
+const RECENT_KEY = "eeaao_recent_v1";
+
 export default function Home() {
+  const [query, setQuery] = useState("");
+  const [recent, setRecent] = useState<RecentTool[]>([]);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    try {
+      setRecent(JSON.parse(localStorage.getItem(RECENT_KEY) ?? "[]"));
+    } catch {}
+  }, []);
+
   const liveCount = categories.reduce(
     (acc, cat) => acc + cat.tools.filter((t) => t.status === "live").length,
     0
   );
 
+  const q = query.trim().toLowerCase();
+  const filtered = q
+    ? categories.flatMap(cat =>
+        cat.tools
+          .filter(t => t.name.toLowerCase().includes(q) || t.description.toLowerCase().includes(q) || cat.label.toLowerCase().includes(q))
+          .map(t => ({ ...t, cat }))
+      )
+    : null;
+
   return (
     <div className="min-h-screen text-[#e4e4e7]">
 
-      {/* ── Nav ── */}
+      {/* Nav */}
       <nav className="sticky top-0 z-50 border-b border-[#1a1a1a] bg-[#0d0d0d]/98 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-5 h-12 flex items-center gap-6">
-          <Link href="/" className="text-eeaao font-black text-sm tracking-[0.2em] font-mono shrink-0">
-            EEAAO
+          <Link href="/" className="shrink-0">
+            <img src="/logo.png" alt="EEAAO" className="h-7 w-7 rounded-sm object-cover" />
           </Link>
           <div className="flex-1" />
-          <div className="flex items-center gap-1 text-[11px] font-mono">
+          {/* Desktop links */}
+          <div className="hidden sm:flex items-center gap-1 text-[11px] font-mono">
             <Link href="/library"    className="px-3 py-1.5 text-[#a1a1aa] hover:text-[#e4e4e7] transition-colors tracking-widest">/library</Link>
-            <Link href="/community"  className="px-3 py-1.5 text-[#a1a1aa] hover:text-[#00E5FF] transition-colors tracking-widest">/community</Link>
+            <Link href="/community"  className="px-3 py-1.5 text-[#a1a1aa] hover:text-[#00FFFF] transition-colors tracking-widest">/community</Link>
             <a
               href="https://github.com/Everything-Everywhere-All-At-Once/fuzzy-goggles"
               target="_blank"
@@ -35,89 +59,138 @@ export default function Home() {
               </svg>
             </a>
           </div>
+          {/* Mobile hamburger */}
+          <button className="sm:hidden flex flex-col gap-1 p-2 text-[#71717a]" onClick={() => setMenuOpen(v => !v)} aria-label="menu">
+            <span className="block w-5 h-px bg-current transition-all" style={menuOpen ? { transform: "rotate(45deg) translate(2px, 2px)" } : {}} />
+            <span className="block w-5 h-px bg-current transition-all" style={menuOpen ? { opacity: 0 } : {}} />
+            <span className="block w-5 h-px bg-current transition-all" style={menuOpen ? { transform: "rotate(-45deg) translate(2px, -2px)" } : {}} />
+          </button>
         </div>
+        {/* Mobile menu */}
+        {menuOpen && (
+          <div className="sm:hidden border-t border-[#1a1a1a] bg-[#0d0d0d]/98 px-5 py-3 flex flex-col gap-1 text-[11px] font-mono">
+            <Link href="/library"   onClick={() => setMenuOpen(false)} className="py-2 text-[#a1a1aa] hover:text-[#e4e4e7] transition-colors tracking-widest">/library</Link>
+            <Link href="/community" onClick={() => setMenuOpen(false)} className="py-2 text-[#a1a1aa] hover:text-[#00FFFF] transition-colors tracking-widest">/community</Link>
+            <a href="https://github.com/Everything-Everywhere-All-At-Once/fuzzy-goggles" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="py-2 text-[#a1a1aa] hover:text-[#e4e4e7] transition-colors tracking-widest">/github</a>
+          </div>
+        )}
       </nav>
 
-      {/* ── Hero ── */}
+      {/* Hero */}
       <HeroAscii />
 
-      {/* ── Category grid ── */}
+      {/* Tools section */}
       <section id="tools" className="max-w-7xl mx-auto px-5 py-16">
+
+        {/* Header + search */}
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-4 h-px bg-[#FF2D87]/60" />
-            <div className="w-4 h-px bg-[#00E5FF]/60" />
-            <div className="w-4 h-px bg-[#FFD60A]/60" />
+            <div className="w-4 h-px bg-[#FF3399]/60" />
+            <div className="w-4 h-px bg-[#00FFFF]/60" />
+            <div className="w-4 h-px bg-[#FFFF00]/60" />
           </div>
-          <p className="text-[#71717a] text-xs font-mono tracking-widest">
-            {liveCount} tools &nbsp;·&nbsp; {categories.length} categories &nbsp;·&nbsp; 100% browser-native
-          </p>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+            <p className="text-[#71717a] text-xs font-mono tracking-widest shrink-0">
+              {liveCount} tools &nbsp;·&nbsp; {categories.length} categories &nbsp;·&nbsp; 100% browser-native
+            </p>
+            <div className="flex-1 sm:max-w-xs relative">
+              <input
+                type="text"
+                placeholder="search tools..."
+                value={query}
+                onChange={e => setQuery(e.target.value)}
+                className="w-full bg-[#111111] border border-[#2a2a2a] rounded px-3 py-1.5 text-xs font-mono text-[#e4e4e7] placeholder:text-[#3f3f46] focus:outline-none focus:border-[#3f3f46] transition-colors"
+              />
+              {query && (
+                <button onClick={() => setQuery("")} className="absolute right-2 top-1/2 -translate-y-1/2 text-[#3f3f46] hover:text-[#71717a] text-xs">x</button>
+              )}
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {categories.map((cat) => {
-            const live = cat.tools.filter((t) => t.status === "live").length;
-            return (
-              <Link
-                key={cat.id}
-                href={`/tools/${cat.id}`}
-                className="group relative overflow-hidden rounded-lg border border-[#1e1e1e] bg-[#111111] p-6 transition-all duration-200 hover:border-opacity-50"
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = `${cat.accent}55`;
-                  el.style.backgroundColor = `${cat.accent}08`;
-                  el.style.boxShadow = `0 0 28px ${cat.accent}18, inset 0 0 20px ${cat.accent}06`;
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = "#1e1e1e";
-                  el.style.backgroundColor = "#111111";
-                  el.style.boxShadow = "none";
-                }}
-              >
-                {/* Accent strip */}
-                <div
-                  className="absolute inset-y-0 left-0 w-[3px] rounded-l opacity-30 group-hover:opacity-60 transition-opacity duration-200"
-                  style={{ backgroundColor: cat.accent }}
-                />
+        {/* Search results */}
+        {filtered !== null ? (
+          <div>
+            <p className="text-[10px] font-mono text-[#52525b] mb-4 tracking-widest">{filtered.length} result{filtered.length !== 1 ? "s" : ""} for &quot;{query}&quot;</p>
+            {filtered.length === 0 ? (
+              <p className="text-[#3f3f46] text-sm font-mono">no tools match that search</p>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+                {filtered.map(({ cat, ...tool }) => (
+                  <Link key={tool.href} href={tool.status === "live" ? tool.href : "#"}
+                    className="group flex flex-col p-4 rounded-lg border border-[#1e1e1e] bg-[#111111] transition-all duration-200"
+                    onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = `${cat.accent}55`; el.style.backgroundColor = `${cat.accent}08`; }}
+                    onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "#1e1e1e"; el.style.backgroundColor = "#111111"; }}>
+                    <span className="text-[9px] font-mono tracking-widest mb-1" style={{ color: `${cat.accent}80` }}>{cat.label}</span>
+                    <span className="text-sm font-bold text-[#e4e4e7] mb-1">{tool.name}</span>
+                    <span className="text-[11px] text-[#52525b]">{tool.description}</span>
+                    {tool.status === "soon" && <span className="mt-2 text-[9px] font-mono text-[#3f3f46] tracking-widest">coming soon</span>}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        ) : (
+          <>
+            {/* Recently used */}
+            {recent.length > 0 && (
+              <div className="mb-10">
+                <p className="text-[10px] font-mono text-[#3f3f46] tracking-widest mb-3 uppercase">recently used</p>
+                <div className="flex flex-wrap gap-2">
+                  {recent.map(r => (
+                    <Link key={r.href} href={r.href}
+                      className="flex items-center gap-2 px-3 py-1.5 rounded border border-[#1e1e1e] bg-[#111111] text-xs font-mono transition-all duration-150"
+                      style={{ color: r.accent }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = `${r.accent}55`; (e.currentTarget as HTMLElement).style.backgroundColor = `${r.accent}08`; }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#1e1e1e"; (e.currentTarget as HTMLElement).style.backgroundColor = "#111111"; }}>
+                      <span className="text-[9px] text-[#3f3f46]">{r.category}</span>
+                      <span>/</span>
+                      {r.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
 
-                {/* Icon + count */}
-                <div className="flex items-start justify-between mb-4 pl-1">
-                  <span className="text-2xl leading-none" style={{ color: cat.accent }}>
-                    {cat.icon}
-                  </span>
-                  <span
-                    className="text-[10px] font-mono px-2 py-0.5 rounded"
-                    style={{ backgroundColor: `${cat.accent}15`, color: cat.accent }}
+            {/* Category grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {categories.map((cat) => {
+                const live = cat.tools.filter((t) => t.status === "live").length;
+                return (
+                  <Link
+                    key={cat.id}
+                    href={`/tools/${cat.id}`}
+                    className="group relative overflow-hidden rounded-lg border border-[#1e1e1e] bg-[#111111] p-6 transition-all duration-200 hover:border-opacity-50"
+                    onMouseEnter={(e) => {
+                      const el = e.currentTarget as HTMLElement;
+                      el.style.borderColor = `${cat.accent}55`;
+                      el.style.backgroundColor = `${cat.accent}08`;
+                      el.style.boxShadow = `0 0 28px ${cat.accent}18, inset 0 0 20px ${cat.accent}06`;
+                    }}
+                    onMouseLeave={(e) => {
+                      const el = e.currentTarget as HTMLElement;
+                      el.style.borderColor = "#1e1e1e";
+                      el.style.backgroundColor = "#111111";
+                      el.style.boxShadow = "none";
+                    }}
                   >
-                    {live} tools
-                  </span>
-                </div>
-
-                {/* Label */}
-                <h2 className="text-sm font-bold text-[#e4e4e7] mb-2 pl-1 leading-tight">
-                  {cat.label}
-                </h2>
-
-                {/* Description */}
-                <p className="text-[11px] text-[#52525b] leading-relaxed pl-1">
-                  {cat.description}
-                </p>
-
-                {/* Arrow */}
-                <div
-                  className="mt-4 pl-1 text-[10px] font-mono tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                  style={{ color: cat.accent }}
-                >
-                  explore →
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+                    <div className="absolute inset-y-0 left-0 w-[3px] rounded-l opacity-30 group-hover:opacity-60 transition-opacity duration-200" style={{ backgroundColor: cat.accent }} />
+                    <div className="flex items-start justify-between mb-4 pl-1">
+                      <span className="text-2xl leading-none" style={{ color: cat.accent }}>{cat.icon}</span>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded" style={{ backgroundColor: `${cat.accent}15`, color: cat.accent }}>{live} tools</span>
+                    </div>
+                    <h2 className="text-sm font-bold text-[#e4e4e7] mb-2 pl-1 leading-tight">{cat.label}</h2>
+                    <p className="text-[11px] text-[#52525b] leading-relaxed pl-1">{cat.description}</p>
+                    <div className="mt-4 pl-1 text-[10px] font-mono tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-200" style={{ color: cat.accent }}>explore →</div>
+                  </Link>
+                );
+              })}
+            </div>
+          </>
+        )}
       </section>
 
-      {/* ── Footer ── */}
+      {/* Footer */}
       <footer className="border-t border-[#1a1a1a] py-6 px-5">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] font-mono text-[#2a2a2a]">
           <div className="flex items-center gap-2">

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 
 interface ToolShellProps {
@@ -11,6 +12,8 @@ interface ToolShellProps {
   children: React.ReactNode;
 }
 
+const RECENT_KEY = "eeaao_recent_v1";
+
 export function ToolShell({
   category,
   categoryHref,
@@ -19,12 +22,21 @@ export function ToolShell({
   description,
   children,
 }: ToolShellProps) {
+  useEffect(() => {
+    try {
+      const stored = JSON.parse(localStorage.getItem(RECENT_KEY) ?? "[]") as { title: string; href: string; accent: string; category: string }[];
+      const href = window.location.pathname;
+      const next = [{ title, href, accent, category }, ...stored.filter(r => r.href !== href)].slice(0, 6);
+      localStorage.setItem(RECENT_KEY, JSON.stringify(next));
+    } catch {}
+  }, [title, accent, category]);
+
   return (
     <div className="min-h-screen text-[#e4e4e7]">
       {/* Nav */}
       <nav className="border-b border-[#2a2a2a] px-6 py-4 flex items-center gap-3 sticky top-0 z-50 bg-[#0d0d0d]/95 backdrop-blur-sm">
-        <Link href="/" className="text-eeaao font-black tracking-widest text-sm hover:opacity-80 transition-opacity">
-          EEAAO
+        <Link href="/" className="hover:opacity-80 transition-opacity">
+          <img src="/logo.png" alt="EEAAO" className="h-6 w-6 rounded-sm object-cover" />
         </Link>
         <span className="text-[#3f3f46]">/</span>
         <Link href={categoryHref} className="text-[#a1a1aa] text-xs tracking-wider hover:text-[#e4e4e7] transition-colors">

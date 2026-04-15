@@ -1,10 +1,10 @@
 <div align="center">
 
-# ✦ EVERYTHING EVERYWHERE ALL AT ONCE
+# EVERYTHING EVERYWHERE ALL AT ONCE
 
-<img src="https://img.shields.io/badge/EVERYTHING-FF2D87?style=for-the-badge&labelColor=0d0d0d" />
-<img src="https://img.shields.io/badge/EVERYWHERE-00E5FF?style=for-the-badge&labelColor=0d0d0d" />
-<img src="https://img.shields.io/badge/ALL_AT_ONCE-FFD60A?style=for-the-badge&labelColor=0d0d0d&color=FFD60A" />
+<img src="https://img.shields.io/badge/EVERYTHING-FF3399?style=for-the-badge&labelColor=0d0d0d" />
+<img src="https://img.shields.io/badge/EVERYWHERE-00FFFF?style=for-the-badge&labelColor=0d0d0d" />
+<img src="https://img.shields.io/badge/ALL_AT_ONCE-FFFF00?style=for-the-badge&labelColor=0d0d0d&color=FFFF00" />
 
 <br />
 
@@ -12,17 +12,17 @@
 
 <br />
 
-[![Live Site](https://img.shields.io/badge/🌐_Live_Site-eeaao--bay.vercel.app-FF2D87?style=flat-square&labelColor=0d0d0d)](https://eeaao-bay.vercel.app)
+[![Live Site](https://img.shields.io/badge/Live_Site-eeaao--bay.vercel.app-FF3399?style=flat-square&labelColor=0d0d0d)](https://eeaao-bay.vercel.app)
 [![License](https://img.shields.io/badge/License-MIT-C055FF?style=flat-square&labelColor=0d0d0d)](./LICENSE)
-[![Next.js](https://img.shields.io/badge/Next.js-16-00E5FF?style=flat-square&logo=next.js&logoColor=white&labelColor=0d0d0d)](https://nextjs.org)
-[![Tailwind](https://img.shields.io/badge/Tailwind-v4-FFD60A?style=flat-square&logo=tailwindcss&logoColor=white&labelColor=0d0d0d)](https://tailwindcss.com)
+[![Next.js](https://img.shields.io/badge/Next.js-16-00FFFF?style=flat-square&logo=next.js&logoColor=white&labelColor=0d0d0d)](https://nextjs.org)
+[![Tailwind](https://img.shields.io/badge/Tailwind-v4-FFFF00?style=flat-square&logo=tailwindcss&logoColor=white&labelColor=0d0d0d)](https://tailwindcss.com)
 [![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-FF6B35?style=flat-square&logo=vercel&logoColor=white&labelColor=0d0d0d)](https://vercel.com)
 
 </div>
 
 ---
 
-## 💡 What is EEAAO?
+## What is EEAAO?
 
 A free, open-source browser toolbox. Every single tool runs **100% client-side** — no uploads, no servers, no accounts, no tracking. Your files never leave your machine.
 
@@ -30,9 +30,9 @@ A free, open-source browser toolbox. Every single tool runs **100% client-side**
 
 ---
 
-## 🛠 Tools
+## Tools
 
-### 🩷 Audio & Music
+### Audio & Music
 | Tool | What it does |
 |------|-------------|
 | **Format Converter** | MP3 / WAV / FLAC / OGG / AAC |
@@ -42,14 +42,14 @@ A free, open-source browser toolbox. Every single tool runs **100% client-side**
 | **Metadata Editor** | Edit ID3 tags & cover art |
 | **Audio Normalizer** | Level out volume across tracks |
 
-### 🩵 DJ Tools
+### DJ Tools
 | Tool | What it does |
 |------|-------------|
 | **USB Compatibility Checker** | Analyze files for your CDJ/mixer |
 | **Auto-Fix & Convert** | Fix files to match device specs |
 | **BPM & Key Tagger** | Batch tag your entire library |
 
-### 💜 Image & Art
+### Image & Art
 | Tool | What it does |
 |------|-------------|
 | **Format Converter** | PNG / JPG / WebP / AVIF / SVG |
@@ -60,29 +60,29 @@ A free, open-source browser toolbox. Every single tool runs **100% client-side**
 | **EXIF Viewer / Remover** | View or strip metadata |
 | **Image to ASCII** | Convert images to ASCII art |
 
-### 🧡 Video
+### Video
 | Tool | What it does |
 |------|-------------|
 | **Format Converter** | MP4 / MOV / AVI / WebM / MKV |
 | **Video Trimmer** | Cut clips without re-encoding |
-| **GIF Maker** | Video → animated GIF |
+| **GIF Maker** | Video to animated GIF |
 | **Video Compressor** | Reduce file size |
 | **Thumbnail Extractor** | Pull frames as images |
 
-### 💛 Documents & PDF
+### Documents & PDF
 | Tool | What it does |
 |------|-------------|
-| **Image → PDF** | Convert PNG/JPG to PDF |
-| **PDF → Image** | Extract pages as images |
+| **Image to PDF** | Convert PNG/JPG to PDF |
+| **PDF to Image** | Extract pages as images |
 | **PDF Merger** | Combine multiple PDFs |
 | **PDF Splitter** | Split PDF into pages |
 | **OCR** | Image to editable text |
-| **Markdown → PDF** | Render MD as PDF |
-| **DOCX → PDF** | Word documents to PDF |
-| **DOCX → HTML** | Word to clean HTML |
-| **TXT / CSV → PDF** | Plain text to PDF |
+| **Markdown to PDF** | Render MD as PDF |
+| **DOCX to PDF** | Word documents to PDF |
+| **DOCX to HTML** | Word to clean HTML |
+| **TXT / CSV to PDF** | Plain text to PDF |
 
-### 🩶 Cybersecurity
+### Cybersecurity
 | Tool | What it does |
 |------|-------------|
 | **Text Encryptor** | AES-256 encrypt/decrypt text |
@@ -93,7 +93,7 @@ A free, open-source browser toolbox. Every single tool runs **100% client-side**
 | **QR Generator** | Create & read QR codes |
 | **Steganography** | Hide messages inside images |
 
-### 🤖 AI Tools
+### AI Tools
 | Tool | What it does |
 |------|-------------|
 | **Text Summarizer** | Summarize any text, locally |
@@ -102,7 +102,7 @@ A free, open-source browser toolbox. Every single tool runs **100% client-side**
 | **Code Explainer** | Explain code in plain English |
 | **Image Captioner** | Generate alt text from images |
 
-### 🎨 Creative
+### Creative
 | Tool | What it does |
 |------|-------------|
 | **Color Palette Generator** | Generate and export palettes |
@@ -111,7 +111,7 @@ A free, open-source browser toolbox. Every single tool runs **100% client-side**
 | **Pattern Generator** | Repeating SVG pattern creator |
 | **Pixel Art Editor** | Browser pixel art canvas |
 
-### 🌐 Web Design
+### Web Design
 | Tool | What it does |
 |------|-------------|
 | **CSS Gradient Generator** | Visual gradient builder |
@@ -122,13 +122,13 @@ A free, open-source browser toolbox. Every single tool runs **100% client-side**
 | **Typography Scale** | Modular type scale builder |
 | **Color System** | Design token generator |
 
-### ⚡ Quality of Life
+### Quality of Life
 | Tool | What it does |
 |------|-------------|
 | **JSON Formatter** | Format, validate, diff JSON |
 | **Markdown Editor** | Live preview markdown editor |
 | **Regex Tester** | Build and test regular expressions |
-| **UUID Generator** | Generate UUIDs v1–v7 |
+| **UUID Generator** | Generate UUIDs v1-v7 |
 | **Unit Converter** | Length, weight, temperature, etc. |
 | **Timezone Converter** | Convert times across timezones |
 | **Text Diff** | Compare two blocks of text |
@@ -136,14 +136,14 @@ A free, open-source browser toolbox. Every single tool runs **100% client-side**
 
 ---
 
-## 🧱 Stack
+## Stack
 
 <div align="center">
 
 ![Next.js](https://img.shields.io/badge/Next.js_16-black?style=for-the-badge&logo=next.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-00E5FF?style=for-the-badge&logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_v4-FF2D87?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-FFD60A?style=for-the-badge&logo=vercel&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-00FFFF?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_v4-FF3399?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-FFFF00?style=for-the-badge&logo=vercel&logoColor=black)
 
 </div>
 
@@ -155,7 +155,7 @@ A free, open-source browser toolbox. Every single tool runs **100% client-side**
 
 ---
 
-## 🚀 Running locally
+## Running locally
 
 ```bash
 git clone https://github.com/Everything-Everywhere-All-At-Once/fuzzy-goggles
@@ -168,7 +168,7 @@ Open [http://localhost:3000](http://localhost:3000) and you're in.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 PRs are welcome. Each tool lives in `app/tools/<category>/<tool-name>/page.tsx`.
 
@@ -180,13 +180,13 @@ PRs are welcome. Each tool lives in `app/tools/<category>/<tool-name>/page.tsx`.
 
 ---
 
-## 📚 Free Library
+## Free Library
 
 The `/library` page links are sourced in part from [FMHY.net](https://fmhy.net) — a community-maintained wiki of free resources. All credit to their contributors.
 
 ---
 
-## 📄 License
+## License
 
 MIT — see [LICENSE](./LICENSE)
 
@@ -194,10 +194,10 @@ MIT — see [LICENSE](./LICENSE)
 
 <div align="center">
 
-**made with chaos and color** ✦
+**made with chaos and color**
 
-[![Everything](https://img.shields.io/badge/Everything-FF2D87?style=flat-square&labelColor=0d0d0d)]()
-[![Everywhere](https://img.shields.io/badge/Everywhere-00E5FF?style=flat-square&labelColor=0d0d0d)]()
-[![All At Once](https://img.shields.io/badge/All_At_Once-FFD60A?style=flat-square&labelColor=0d0d0d)]()
+[![Everything](https://img.shields.io/badge/Everything-FF3399?style=flat-square&labelColor=0d0d0d)]()
+[![Everywhere](https://img.shields.io/badge/Everywhere-00FFFF?style=flat-square&labelColor=0d0d0d)]()
+[![All At Once](https://img.shields.io/badge/All_At_Once-FFFF00?style=flat-square&labelColor=0d0d0d)]()
 
 </div>

@@ -82,7 +82,6 @@ export default function ExifPage() {
           <img src={preview} alt="preview" className="max-h-36 mx-auto rounded object-contain border border-[#2a2a2a]" />
         ) : (
           <>
-            <div className="text-3xl mb-2 opacity-20">⬡</div>
             <div className="text-sm text-[#71717a] font-mono">drop image or click to browse</div>
           </>
         )}
@@ -101,7 +100,7 @@ export default function ExifPage() {
               {/* Sensitive fields warning */}
               {SENSITIVE_KEYS.some((k) => exif[k] != null) && (
                 <div className="p-4 rounded border border-[#EF4444]/30 bg-[#EF4444]/08 text-xs font-mono text-[#EF4444] space-y-1">
-                  <div className="font-bold mb-2">⚠ sensitive data detected:</div>
+                  <div className="font-bold mb-2">! sensitive data detected:</div>
                   {SENSITIVE_KEYS.filter((k) => exif[k] != null).map((k) => (
                     <div key={k}>{k}: <span className="text-[#e4e4e7]">{String(exif[k])}</span></div>
                   ))}

@@ -23,7 +23,7 @@ const LIBRARY: Section[] = [
     id: "ai",
     label: "AI Tools",
     icon: "◈",
-    accent: "#00E5FF",
+    accent: "#00FFFF",
     resources: [
       // Chatbots
       { sub: "Chatbots", name: "ChatGPT", description: "OpenAI's flagship. GPT-4o and o-series. Most widely used LLM.", url: "https://chatgpt.com" },
@@ -123,7 +123,7 @@ const LIBRARY: Section[] = [
   {
     id: "music",
     label: "Music & Audio",
-    icon: "♫",
+    icon: "~",
     accent: "#A855F7",
     resources: [
       // Streaming
@@ -174,7 +174,7 @@ const LIBRARY: Section[] = [
   {
     id: "ebooks",
     label: "Ebooks & Reading",
-    icon: "📖",
+    icon: "◎",
     accent: "#22C55E",
     resources: [
       // Main Libraries
@@ -312,7 +312,7 @@ const LIBRARY: Section[] = [
     id: "privacy",
     label: "Privacy & Security",
     icon: "⬢",
-    accent: "#FF2D87",
+    accent: "#FF3399",
     resources: [
       // Adblockers
       { sub: "Adblockers", name: "uBlock Origin", description: "The most effective browser adblocker. Open-source, no telemetry.", url: "https://github.com/gorhill/uBlock" },
@@ -391,7 +391,7 @@ const LIBRARY: Section[] = [
     id: "linux",
     label: "Linux & macOS",
     icon: "⬟",
-    accent: "#FFD60A",
+    accent: "#FFFF00",
     resources: [
       // Guides & Docs
       { sub: "Guides & Documentation", name: "ArchWiki", description: "Most comprehensive Linux documentation. Useful for any distro.", url: "https://wiki.archlinux.org" },
@@ -492,7 +492,7 @@ const LIBRARY: Section[] = [
   {
     id: "icons",
     label: "Icons & Vectors",
-    icon: "✦",
+    icon: "+",
     accent: "#22C55E",
     resources: [
       { sub: "Icon Sets", name: "Heroicons", description: "Hand-crafted SVG icons by the Tailwind team. MIT licensed.", url: "https://heroicons.com" },
@@ -559,7 +559,9 @@ export default function LibraryPage() {
       {/* Nav */}
       <nav className="sticky top-0 z-50 border-b border-[#1a1a1a] bg-[#0d0d0d]/98 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-12 flex items-center gap-4">
-          <Link href="/" className="text-eeaao font-black text-sm tracking-[0.2em] font-mono shrink-0">EEAAO</Link>
+          <Link href="/" className="shrink-0">
+            <img src="/logo.png" alt="EEAAO" className="h-7 w-7 rounded-sm object-cover" />
+          </Link>
           <div className="w-px h-4 bg-[#2a2a2a] shrink-0" />
           <span className="text-[10px] font-mono text-[#71717a] tracking-widest">/library</span>
           <div className="flex-1" />

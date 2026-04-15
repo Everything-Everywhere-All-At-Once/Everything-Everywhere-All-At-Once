@@ -8,7 +8,7 @@ const accent = "#FB923C";
 const GRID_SIZES = [8, 16, 24, 32] as const;
 const PALETTE = [
   "#000000", "#ffffff", "#EF4444", "#F97316", "#FACC15", "#22C55E",
-  "#00E5FF", "#6366F1", "#A855F7", "#EC4899", "#94A3B8", "#78716C",
+  "#00FFFF", "#6366F1", "#A855F7", "#EC4899", "#94A3B8", "#78716C",
 ];
 
 type Tool = "pencil" | "fill" | "eraser";
@@ -95,7 +95,7 @@ export default function PixelPage() {
               <button key={t} onClick={() => setTool(t)}
                 className="px-3 py-1.5 text-xs font-mono rounded border transition-all capitalize"
                 style={tool === t ? { borderColor: accent, color: accent, backgroundColor: `${accent}15` } : { borderColor: "#2a2a2a", color: "#71717a" }}>
-                {t === "pencil" ? "✏ draw" : t === "fill" ? "⬛ fill" : "◻ erase"}
+                {t === "pencil" ? "draw" : t === "fill" ? "fill" : "erase"}
               </button>
             ))}
           </div>

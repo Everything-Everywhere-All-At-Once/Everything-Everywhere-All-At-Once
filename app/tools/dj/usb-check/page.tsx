@@ -357,7 +357,7 @@ export default function USBCheckPage() {
                       <div key={j} className="px-4 py-2.5 flex items-start gap-3">
                         <span className="text-[10px] font-mono shrink-0 mt-0.5"
                           style={{ color: issue.level === "error" ? "#EF4444" : "#FACC15" }}>
-                          {issue.level === "error" ? "✗" : "⚠"}
+                          {issue.level === "error" ? "!" : "!"}
                         </span>
                         <div>
                           <span className="text-[10px] text-[#71717a] font-mono">[{issue.field}] </span>

@@ -81,7 +81,6 @@ export default function ImageToPdfPage() {
         className="border border-dashed rounded p-8 text-center mb-6 cursor-pointer transition-all"
         style={{ borderColor: isDragging ? accent : "#2a2a2a", backgroundColor: isDragging ? `${accent}08` : "transparent" }}>
         <input ref={fileInputRef} type="file" accept="image/*" multiple className="hidden" onChange={e => { if (e.target.files) addImages(e.target.files); }} />
-        <div className="text-2xl mb-2 opacity-20">⬡</div>
         <div className="text-sm text-[#71717a] font-mono">drop images here or click to browse</div>
         <div className="text-xs text-[#3f3f46] mt-1">PNG · JPG · WebP · multiple files supported</div>
       </div>

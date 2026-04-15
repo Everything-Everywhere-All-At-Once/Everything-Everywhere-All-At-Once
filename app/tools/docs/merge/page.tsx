@@ -62,7 +62,6 @@ export default function PdfMergePage() {
         className="border border-dashed rounded p-8 text-center mb-6 cursor-pointer transition-all"
         style={{ borderColor: isDragging ? accent : "#2a2a2a", backgroundColor: isDragging ? `${accent}08` : "transparent" }}>
         <input ref={fileInputRef} type="file" accept=".pdf,application/pdf" multiple className="hidden" onChange={e => { if (e.target.files) addPdfs(e.target.files); }} />
-        <div className="text-2xl mb-2 opacity-20">⬡</div>
         <div className="text-sm text-[#71717a] font-mono">drop PDF files or click to browse</div>
       </div>
 

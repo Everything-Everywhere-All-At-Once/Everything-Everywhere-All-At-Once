@@ -4,14 +4,14 @@ import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 const PALETTE = [
-  { r: 255, g: 45,  b: 135 }, // hot pink
-  { r: 0,   g: 229, b: 255 }, // electric cyan
-  { r: 255, g: 214, b: 10  }, // acid gold
-  { r: 192, g: 85,  b: 255 }, // vivid purple
-  { r: 255, g: 107, b: 53  }, // orange
-  { r: 6,   g: 214, b: 160 }, // teal
-  { r: 255, g: 255, b: 80  }, // yellow-green
-  { r: 255, g: 60,  b: 60  }, // red
+  { r: 255, g: 51,  b: 153 }, // logo pink  #FF3399
+  { r: 0,   g: 255, b: 255 }, // logo cyan  #00FFFF
+  { r: 255, g: 255, b: 0   }, // logo yellow #FFFF00
+  { r: 255, g: 51,  b: 153 }, // logo pink (weighted)
+  { r: 0,   g: 255, b: 255 }, // logo cyan (weighted)
+  { r: 255, g: 255, b: 0   }, // logo yellow (weighted)
+  { r: 255, g: 100, b: 200 }, // soft pink variant
+  { r: 100, g: 255, b: 255 }, // soft cyan variant
 ];
 
 type Blob = {

@@ -32,7 +32,7 @@ function formatDuration(s: number) {
   return `${m}:${Math.floor(s % 60).toString().padStart(2, "0")}`;
 }
 
-const accent = "#00E5FF";
+const accent = "#00FFFF";
 
 export default function KeyBPMPage() {
   const [result, setResult] = useState<Result | null>(null);
@@ -96,12 +96,11 @@ export default function KeyBPMPage() {
         />
         {status === "analyzing" ? (
           <div>
-            <div className="text-[#00E5FF] font-mono text-sm mb-2 animate-pulse">analyzing audio...</div>
+            <div className="text-[#00FFFF] font-mono text-sm mb-2 animate-pulse">analyzing audio...</div>
             <div className="text-xs text-[#71717a]">detecting key and BPM — this may take a few seconds</div>
           </div>
         ) : (
           <div>
-            <div className="text-3xl mb-3 opacity-20">♩</div>
             <div className="text-sm text-[#71717a] font-mono">drop audio file here or click to browse</div>
             <div className="text-xs text-[#3f3f46] mt-2">MP3 · WAV · FLAC · OGG · AAC · M4A</div>
           </div>

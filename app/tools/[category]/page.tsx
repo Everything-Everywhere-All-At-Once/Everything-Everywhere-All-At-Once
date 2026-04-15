@@ -22,8 +22,8 @@ export default async function CategoryPage({
       {/* Nav */}
       <nav className="sticky top-0 z-50 border-b border-[#1a1a1a] bg-[#0d0d0d]/98 backdrop-blur-md">
         <div className="max-w-5xl mx-auto px-5 h-12 flex items-center gap-3">
-          <Link href="/" className="text-eeaao font-black text-sm tracking-[0.2em] font-mono">
-            EEAAO
+          <Link href="/" className="hover:opacity-80 transition-opacity">
+            <img src="/logo.png" alt="EEAAO" className="h-6 w-6 rounded-sm object-cover" />
           </Link>
           <span className="text-[#2a2a2a] font-mono">/</span>
           <span className="text-[11px] font-mono tracking-widest" style={{ color: cat.accent }}>
@@ -58,7 +58,7 @@ export default async function CategoryPage({
       {/* Footer */}
       <footer className="border-t border-[#1a1a1a] py-5 px-5">
         <div className="max-w-5xl mx-auto flex items-center justify-between text-[10px] font-mono text-[#2a2a2a]">
-          <span className="text-eeaao font-black">EEAAO</span>
+          <img src="/logo.png" alt="EEAAO" className="h-5 w-5 rounded-sm object-cover opacity-40" />
           <Link href="/" className="hover:text-[#52525b] transition-colors">← all categories</Link>
         </div>
       </footer>

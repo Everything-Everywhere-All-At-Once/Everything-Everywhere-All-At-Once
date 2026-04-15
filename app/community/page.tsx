@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-const accent = "#00E5FF";
+const accent = "#00FFFF";
 
 type Project = {
   id: string;
@@ -46,50 +46,6 @@ function save(p: Project[]) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(p));
 }
 
-const SEEDS: Project[] = [
-  {
-    id: "s1",
-    title: "BeatSorter",
-    description: "A drag-and-drop interface for sorting your DJ sets by key and BPM compatibility. Built with React + Tone.js, runs entirely in the browser.",
-    url: "https://beatsorter.vercel.app",
-    repo: "https://github.com/example/beatsorter",
-    tags: ["DJ / Music", "Audio"],
-    author: "dj_alex",
-    authorUrl: "",
-    tech: "React, Tone.js, Tailwind",
-    votes: 14,
-    voters: [],
-    createdAt: Date.now() - 1000 * 60 * 60 * 24 * 4,
-  },
-  {
-    id: "s2",
-    title: "PaletteSnap",
-    description: "Snap a photo and instantly get a color palette — 5 dominant colors with hex codes, ready to copy. PWA, works offline.",
-    url: "https://palettesnap.app",
-    repo: "",
-    tags: ["Image", "Web Design"],
-    author: "maya_c",
-    authorUrl: "",
-    tech: "Vanilla JS, Canvas API",
-    votes: 27,
-    voters: [],
-    createdAt: Date.now() - 1000 * 60 * 60 * 24 * 8,
-  },
-  {
-    id: "s3",
-    title: "HashKit CLI",
-    description: "A terminal tool that hashes any file or string with MD5, SHA-1, SHA-256 or SHA-512. Zero dependencies, single Go binary.",
-    url: "",
-    repo: "https://github.com/example/hashkit",
-    tags: ["Cybersecurity", "Developer Tool"],
-    author: "codewright",
-    authorUrl: "",
-    tech: "Go",
-    votes: 9,
-    voters: [],
-    createdAt: Date.now() - 1000 * 60 * 60 * 24 * 2,
-  },
-];
 
 export default function CommunityPage() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -105,9 +61,7 @@ export default function CommunityPage() {
 
   useEffect(() => {
     setVoterId(getVoterId());
-    const stored = load();
-    const ids = new Set(stored.map((p) => p.id));
-    setProjects([...stored, ...SEEDS.filter((s) => !ids.has(s.id))]);
+    setProjects(load());
   }, []);
 
   const visible = [...projects]
@@ -169,11 +123,13 @@ export default function CommunityPage() {
       {/* Nav */}
       <nav className="sticky top-0 z-50 border-b border-[#1a1a1a] bg-[#0d0d0d]/98 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-5 h-12 flex items-center gap-4">
-          <Link href="/" className="text-eeaao font-black text-sm tracking-[0.2em] font-mono shrink-0">EEAAO</Link>
+          <Link href="/" className="shrink-0">
+            <img src="/logo.png" alt="EEAAO" className="h-7 w-7 rounded-sm object-cover" />
+          </Link>
           <div className="w-px h-4 bg-[#2a2a2a] shrink-0" />
-          <span className="text-[10px] font-mono text-[#3f3f46] tracking-widest">/community</span>
+          <span className="text-[10px] font-mono text-[#71717a] tracking-widest">/community</span>
           <div className="flex-1" />
-          <Link href="/" className="text-[10px] font-mono text-[#52525b] hover:text-[#a1a1aa] transition-colors tracking-widest">← back</Link>
+          <Link href="/" className="text-[10px] font-mono text-[#71717a] hover:text-[#a1a1aa] transition-colors tracking-widest">← back</Link>
         </div>
       </nav>
 
@@ -182,8 +138,8 @@ export default function CommunityPage() {
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-2 mb-1">
-            <div className="w-6 h-px bg-[#00E5FF]/50" />
-            <span className="text-[10px] font-mono text-[#00E5FF]/50 tracking-widest">COMMUNITY</span>
+            <div className="w-6 h-px bg-[#00FFFF]/50" />
+            <span className="text-[10px] font-mono text-[#00FFFF]/50 tracking-widest">COMMUNITY</span>
           </div>
           <h1 className="text-2xl font-bold tracking-tight mb-2">Show your project</h1>
           <p className="text-sm text-[#52525b] leading-relaxed max-w-lg">
@@ -364,7 +320,7 @@ export default function CommunityPage() {
                     <div className="flex items-center gap-4 flex-wrap">
                       {p.url && (
                         <a href={p.url} target="_blank" rel="noopener noreferrer"
-                          className="text-[10px] font-mono text-[#52525b] hover:text-[#00E5FF] transition-colors"
+                          className="text-[10px] font-mono text-[#52525b] hover:text-[#00FFFF] transition-colors"
                           onClick={(e) => e.stopPropagation()}>
                           ↗ live
                         </a>
@@ -403,7 +359,7 @@ export default function CommunityPage() {
       {/* Footer */}
       <footer className="mt-12 border-t border-[#1a1a1a] py-5 px-5">
         <div className="max-w-4xl mx-auto flex items-center justify-between text-[10px] font-mono text-[#2a2a2a]">
-          <span className="text-[#00E5FF]/40">EEAAO</span>
+          <span className="text-[#00FFFF]/40">EEAAO</span>
           <Link href="/" className="hover:text-[#52525b] transition-colors">← all tools</Link>
         </div>
       </footer>
@@ -430,7 +386,7 @@ export default function CommunityPage() {
           outline: none;
           transition: border-color 0.15s;
         }
-        .field-input:focus { border-color: rgba(0,229,255,0.35); }
+        .field-input:focus { border-color: rgba(0,255,255,0.35); }
         .field-input::placeholder { color: #3f3f46; }
       `}</style>
     </div>

@@ -16,9 +16,9 @@ export default function HeroAscii() {
             {/* Main title */}
             <h1 className="font-black leading-none mb-8 flex flex-col gap-1"
               style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', letterSpacing: '-0.03em' }}>
-              <span style={{ color: '#FF2D87' }}>EVERYTHING</span>
-              <span style={{ color: '#00E5FF' }}>EVERYWHERE</span>
-              <span style={{ color: '#FFD60A' }}>ALL AT ONCE</span>
+              <span style={{ color: '#FF3399' }}>EVERYTHING</span>
+              <span style={{ color: '#00FFFF' }}>EVERYWHERE</span>
+              <span style={{ color: '#FFFF00' }}>ALL AT ONCE</span>
             </h1>
 
             {/* Tagline */}
@@ -31,13 +31,13 @@ export default function HeroAscii() {
             <div className="flex flex-col sm:flex-row gap-3">
               <button
                 className="relative px-7 py-3 font-mono text-xs tracking-widest border transition-all duration-200"
-                style={{ borderColor: '#FF2D87', color: '#FF2D87', backgroundColor: 'rgba(255,45,135,0.06)' }}
+                style={{ borderColor: '#FF3399', color: '#FF3399', backgroundColor: 'rgba(255,51,153,0.06)' }}
                 onClick={() => document.getElementById('tools')?.scrollIntoView({ behavior: 'smooth' })}
-                onMouseEnter={e => (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,45,135,0.14)'}
-                onMouseLeave={e => (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,45,135,0.06)'}
+                onMouseEnter={e => (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,51,153,0.14)'}
+                onMouseLeave={e => (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(255,51,153,0.06)'}
               >
-                <span className="absolute -top-px -left-px w-2 h-2 border-t border-l border-[#FF2D87] opacity-60" />
-                <span className="absolute -bottom-px -right-px w-2 h-2 border-b border-r border-[#FF2D87] opacity-60" />
+                <span className="absolute -top-px -left-px w-2 h-2 border-t border-l border-[#FF3399] opacity-60" />
+                <span className="absolute -bottom-px -right-px w-2 h-2 border-b border-r border-[#FF3399] opacity-60" />
                 EXPLORE TOOLS
               </button>
 

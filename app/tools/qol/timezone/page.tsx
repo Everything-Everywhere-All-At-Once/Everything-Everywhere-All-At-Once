@@ -61,7 +61,7 @@ export default function TimezonePage() {
     return (
       <div className="flex items-center gap-4 px-4 py-3 border-b border-[#1a1a1a] last:border-0">
         <button onClick={() => togglePin(tz)} className="text-[10px] shrink-0" style={{ color: isPinned ? accent : "#3f3f46" }}>
-          {isPinned ? "★" : "☆"}
+          {isPinned ? "*" : "-"}
         </button>
         <div className="flex-1 min-w-0">
           <div className="text-xs font-mono text-[#e4e4e7]">{label}</div>

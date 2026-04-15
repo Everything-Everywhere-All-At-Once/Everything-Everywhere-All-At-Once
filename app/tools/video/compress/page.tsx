@@ -79,7 +79,7 @@ export default function VideoCompressPage() {
         <input ref={fileInputRef} type="file" accept="video/*" className="hidden" onChange={e => { const f = e.target.files?.[0]; if (f) { setFile(f); setDownloadUrl(null); setStatus("idle"); } }} />
         {file ? (
           <div><div className="font-mono text-sm text-[#e4e4e7]">{file.name}</div><div className="text-xs text-[#71717a] font-mono mt-1">{(file.size/1024/1024).toFixed(1)} MB</div></div>
-        ) : <><div className="text-2xl mb-2 opacity-20">⬡</div><div className="text-sm text-[#71717a] font-mono">drop video or click to browse</div></>}
+        ) : <><div className="text-sm text-[#71717a] font-mono">drop video or click to browse</div></>}
       </div>
 
       {/* Presets */}

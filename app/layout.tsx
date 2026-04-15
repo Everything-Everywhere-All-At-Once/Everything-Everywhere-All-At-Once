@@ -12,6 +12,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "EEAAO — Everything Everywhere All At Once",
   description: "Every tool you need. One place. Free.",
+  manifest: "/manifest.json",
+  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "EEAAO" },
+  other: { "mobile-web-app-capable": "yes" },
 };
 
 export default function RootLayout({

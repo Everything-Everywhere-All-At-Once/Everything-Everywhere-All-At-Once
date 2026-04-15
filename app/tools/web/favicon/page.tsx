@@ -78,7 +78,7 @@ export default function FaviconPage() {
           <input ref={fileInputRef} type="file" accept="image/*" className="hidden" onChange={e => { const f = e.target.files?.[0]; if (f) loadFile(f); }} />
           {file
             ? <div className="font-mono text-sm text-[#e4e4e7]">{file.name}</div>
-            : <><div className="text-2xl mb-2 opacity-20">⬡</div><div className="text-sm text-[#71717a] font-mono">drop image or click to browse</div><div className="text-xs text-[#3f3f46] mt-1">PNG · SVG · JPG · square images work best</div></>}
+            : <><div className="text-sm text-[#71717a] font-mono">drop image or click to browse</div><div className="text-xs text-[#3f3f46] mt-1">PNG · SVG · JPG · square images work best</div></>}
         </div>
 
         {previewUrl && (

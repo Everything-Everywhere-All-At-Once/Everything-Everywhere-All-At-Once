@@ -135,7 +135,6 @@ export default function MoodboardPage() {
           {items.length === 0 && (
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center">
-                <div className="text-3xl mb-3 opacity-10">⬡</div>
                 <div className="text-sm font-mono text-[#3f3f46]">drop images here or use the toolbar above</div>
               </div>
             </div>

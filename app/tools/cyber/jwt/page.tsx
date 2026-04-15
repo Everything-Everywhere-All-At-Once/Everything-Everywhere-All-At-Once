@@ -134,7 +134,7 @@ export default function JwtPage() {
             <div className="bg-[#141414] border border-[#2a2a2a] rounded p-4">
               <div className="text-[10px] font-mono uppercase tracking-widest mb-2" style={{ color: accent }}>signature</div>
               <div className="text-[10px] font-mono text-[#3f3f46] break-all">{decoded.signature}</div>
-              <div className="text-[10px] text-[#3f3f46] font-mono mt-2">⚠ signature verification requires the secret key — this tool only decodes, does not verify</div>
+              <div className="text-[10px] text-[#3f3f46] font-mono mt-2">! signature verification requires the secret key — this tool only decodes, does not verify</div>
             </div>
           </div>
         )}

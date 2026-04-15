@@ -89,7 +89,7 @@ export default function GifMakerPage() {
         style={{ borderColor: isDragging ? accent : "#2a2a2a", backgroundColor: isDragging ? `${accent}08` : "transparent" }}>
         <input ref={fileInputRef} type="file" accept="video/*" className="hidden" onChange={e => { const f = e.target.files?.[0]; if (f) handleFile(f); }} />
         {file ? <div className="font-mono text-sm text-[#e4e4e7]">{file.name}</div>
-          : <><div className="text-2xl mb-2 opacity-20">⚡</div><div className="text-sm text-[#71717a] font-mono">drop video or click to browse</div><div className="text-xs text-[#3f3f46] mt-1">recommended: clips under 10 seconds</div></>}
+          : <><div className="text-sm text-[#71717a] font-mono">drop video or click to browse</div><div className="text-xs text-[#3f3f46] mt-1">recommended: clips under 10 seconds</div></>}
       </div>
 
       {file && duration > 0 && (
@@ -113,7 +113,7 @@ export default function GifMakerPage() {
                 onChange={e => setEnd(Math.max(Number(e.target.value), start + 0.5))}
                 className="w-full mt-1 cursor-pointer" style={{ accentColor: accent }} />
             </div>
-            {end - start > 10 && <div className="text-[10px] text-[#FACC15] font-mono">⚠ clips over 10s produce large GIFs — consider trimming</div>}
+            {end - start > 10 && <div className="text-[10px] text-[#FACC15] font-mono">! clips over 10s produce large GIFs — consider trimming</div>}
           </div>
 
           {/* Settings */}

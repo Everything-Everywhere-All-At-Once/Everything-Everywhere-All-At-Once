@@ -5,7 +5,7 @@ import { ToolShell } from "@/components/tool-shell";
 import { FFmpeg } from "@ffmpeg/ffmpeg";
 import { fetchFile, toBlobURL } from "@ffmpeg/util";
 
-const accent = "#00E5FF";
+const accent = "#00FFFF";
 
 const PRESETS = [
   { label: "Streaming", value: "-14", desc: "Spotify / Apple Music standard" },
@@ -129,7 +129,7 @@ export default function NormalizePage() {
           </div>
           <input type="range" min={-30} max={-6} step={0.5} value={targetLUFS}
             onChange={(e) => setTargetLUFS(e.target.value)}
-            className="w-full accent-[#00E5FF] cursor-pointer" />
+            className="w-full accent-[#00FFFF] cursor-pointer" />
           <div className="text-[10px] text-[#3f3f46] font-mono mt-2">
             {PRESETS.find((p) => p.value === targetLUFS)?.desc ?? "custom level"}
           </div>

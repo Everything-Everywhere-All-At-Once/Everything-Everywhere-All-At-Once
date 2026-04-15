@@ -126,7 +126,6 @@ export default function DjFixPage() {
           style={{ borderColor: isDragging ? accent : "#2a2a2a", backgroundColor: isDragging ? `${accent}08` : "transparent" }}>
           <input ref={fileInputRef} type="file" accept="audio/*" multiple className="hidden"
             onChange={e => { if (e.target.files) addFiles(e.target.files); }} />
-          <div className="text-2xl mb-2 opacity-20">⬡</div>
           <div className="text-sm text-[#71717a] font-mono">drop audio files or click to browse</div>
         </div>
 

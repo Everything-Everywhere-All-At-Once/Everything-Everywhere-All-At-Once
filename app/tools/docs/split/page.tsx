@@ -120,7 +120,7 @@ export default function PdfSplitPage() {
           onChange={e => { const f = e.target.files?.[0]; if (f) loadPdf(f); }} />
         {file
           ? <div className="font-mono text-sm text-[#e4e4e7]">{file.name} · {totalPages} pages · {(file.size / 1024).toFixed(0)} KB</div>
-          : <><div className="text-2xl mb-2 opacity-20">⬡</div><div className="text-sm text-[#71717a] font-mono">drop PDF or click to browse</div></>}
+          : <><div className="text-sm text-[#71717a] font-mono">drop PDF or click to browse</div></>}
       </div>
 
       {file && totalPages > 0 && (

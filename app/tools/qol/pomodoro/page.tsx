@@ -10,7 +10,7 @@ type Phase = "work" | "short" | "long";
 const DEFAULTS: Record<Phase, number> = { work: 25, short: 5, long: 15 };
 
 const PHASE_LABELS: Record<Phase, string> = { work: "focus", short: "short break", long: "long break" };
-const PHASE_COLORS: Record<Phase, string> = { work: "#6366F1", short: "#22C55E", long: "#00E5FF" };
+const PHASE_COLORS: Record<Phase, string> = { work: "#6366F1", short: "#22C55E", long: "#00FFFF" };
 
 export default function PomodoroPage() {
   const [phase, setPhase] = useState<Phase>("work");

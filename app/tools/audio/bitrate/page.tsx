@@ -23,7 +23,7 @@ function getQuality(bitrate: number, format: string): AudioInfo["quality"] {
 }
 
 const QUALITY_META = {
-  lossless: { label: "Lossless", color: "#00E5FF", desc: "Perfect quality, no compression loss" },
+  lossless: { label: "Lossless", color: "#00FFFF", desc: "Perfect quality, no compression loss" },
   high:     { label: "High",     color: "#22C55E", desc: "Excellent quality, minimal loss" },
   medium:   { label: "Medium",   color: "#FACC15", desc: "Good quality, some compression" },
   low:      { label: "Low",      color: "#EF4444", desc: "Noticeable quality loss" },
@@ -45,7 +45,7 @@ export default function BitrateAnalyzerPage() {
   const [isDragging, setIsDragging] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const accent = "#00E5FF";
+  const accent = "#00FFFF";
 
   const analyze = useCallback((file: File) => {
     setError(null);
@@ -142,7 +142,6 @@ export default function BitrateAnalyzerPage() {
           className="hidden"
           onChange={(e) => { const f = e.target.files?.[0]; if (f) analyze(f); }}
         />
-        <div className="text-3xl mb-3 opacity-20">♫</div>
         <div className="text-sm text-[#71717a] font-mono">drop audio file here or click to browse</div>
         <div className="text-xs text-[#3f3f46] mt-2">MP3 · WAV · FLAC · OGG · AAC · M4A · AIFF</div>
       </div>

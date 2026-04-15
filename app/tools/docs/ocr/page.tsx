@@ -91,8 +91,7 @@ export default function OcrPage() {
           onChange={e => { const f = e.target.files?.[0]; if (f) loadFile(f); }} />
         {file
           ? <div className="font-mono text-sm text-[#e4e4e7]">{file.name} · {(file.size / 1024).toFixed(0)} KB</div>
-          : <><div className="text-2xl mb-2 opacity-20">⬡</div>
-            <div className="text-sm text-[#71717a] font-mono">drop image or PDF or click to browse</div>
+          : <><div className="text-sm text-[#71717a] font-mono">drop image or PDF or click to browse</div>
             <div className="text-xs text-[#3f3f46] mt-1">PNG · JPG · WebP · TIFF · BMP · PDF</div></>}
       </div>
 
