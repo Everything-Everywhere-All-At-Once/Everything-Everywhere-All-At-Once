@@ -359,7 +359,7 @@ export default function CommunityPage() {
       {/* Footer */}
       <footer className="mt-12 border-t border-[#1a1a1a] py-5 px-5">
         <div className="max-w-4xl mx-auto flex items-center justify-between text-[10px] font-mono text-[#2a2a2a]">
-          <span className="text-[#00FFFF]/40">EEAAO</span>
+          <span className="text-[#00FFFF]/40">Everything Everywhere All At Once</span>
           <Link href="/" className="hover:text-[#52525b] transition-colors">← all tools</Link>
         </div>
       </footer>

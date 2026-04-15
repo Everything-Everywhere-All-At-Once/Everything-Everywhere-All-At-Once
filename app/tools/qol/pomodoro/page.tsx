@@ -33,7 +33,7 @@ export default function PomodoroPage() {
             setRunning(false);
             // Notify
             if (typeof Notification !== "undefined" && Notification.permission === "granted") {
-              new Notification("EEAAO Pomodoro", { body: phase === "work" ? "Time for a break!" : "Back to work!" });
+              new Notification("Pomodoro — Everything Everywhere All At Once", { body: phase === "work" ? "Time for a break!" : "Back to work!" });
             }
             // Auto-advance
             if (phase === "work") {

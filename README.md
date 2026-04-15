@@ -34,11 +34,11 @@
 
 ---
 
-## What is EEAAO?
+## What is this?
 
 A free, open-source browser toolbox. Every single tool runs **100% client-side** — no uploads, no servers, no accounts, no tracking. Your files never leave your machine.
 
-60+ tools across 10 categories. Just open and use.
+80+ tools across 10 categories. Just open and use.
 
 ---
 

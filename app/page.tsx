@@ -199,7 +199,7 @@ export default function Home() {
       <footer className="border-t border-[#1a1a1a] py-6 px-5">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] font-mono text-[#2a2a2a]">
           <div className="flex items-center gap-2">
-            <span className="text-eeaao font-black">EEAAO</span>
+            <span className="text-eeaao font-black">Everything Everywhere All At Once</span>
             <span>—</span>
             <span>everything everywhere all at once · {totalTools} tools · no uploads · no accounts</span>
           </div>

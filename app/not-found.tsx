@@ -56,7 +56,7 @@ export default function NotFound() {
 
       {/* Bottom label */}
       <div className="fixed bottom-6 text-[9px] font-mono text-[#2a2a2a] tracking-widest">
-        EEAAO · EVERYTHING EVERYWHERE ALL AT ONCE
+        EVERYTHING EVERYWHERE ALL AT ONCE
       </div>
     </div>
   );

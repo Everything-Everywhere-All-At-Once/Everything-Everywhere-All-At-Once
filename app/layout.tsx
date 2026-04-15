@@ -10,10 +10,10 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EEAAO — Everything Everywhere All At Once",
+  title: "Everything Everywhere All At Once",
   description: "Every tool you need. One place. Free.",
   manifest: "/manifest.json",
-  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "EEAAO" },
+  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Everything Everywhere All At Once" },
   other: { "mobile-web-app-capable": "yes" },
 };
 
