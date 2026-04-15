@@ -1,6 +1,5 @@
 "use client"
 
-import { LayeredText } from "@/components/ui/layered-text"
 import { SparklesText } from "@/components/ui/sparkles-text"
 
 export default function HeroAscii() {
@@ -12,19 +11,6 @@ export default function HeroAscii() {
       <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-white/10 z-20" />
       <div className="absolute bottom-0 left-0 w-8 h-8 border-b border-l border-white/10 z-20" />
       <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-white/10 z-20" />
-
-      {/* LayeredText slogan — sits right-side, behind content */}
-      <div
-        className="absolute inset-y-0 right-0 flex items-center pointer-events-auto"
-        style={{ width: "52%", opacity: 0.07, color: "#ffffff" }}
-      >
-        <LayeredText
-          fontSize="58px"
-          lineHeight={58}
-          autoPlayMs={10000}
-          className="w-full"
-        />
-      </div>
 
       {/* Main content */}
       <div className="relative z-10 flex min-h-[88vh] items-center">

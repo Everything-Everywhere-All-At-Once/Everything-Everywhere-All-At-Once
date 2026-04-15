@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import HeroAscii from "@/components/ui/hero-ascii";
+import { LayeredText } from "@/components/ui/layered-text";
 import { categories, totalTools } from "@/lib/tools";
 
 type RecentTool = { title: string; href: string; accent: string; category: string };
@@ -78,6 +79,11 @@ export default function Home() {
 
       {/* Hero */}
       <HeroAscii />
+
+      {/* Value prop — layered slogan */}
+      <section className="border-y border-[#1a1a1a] overflow-hidden py-4" style={{ opacity: 0.45, color: "#ffffff" }}>
+        <LayeredText fontSize="clamp(32px, 5vw, 52px)" lineHeight={54} autoPlayMs={10000} />
+      </section>
 
       {/* Tools section */}
       <section id="tools" className="max-w-7xl mx-auto px-5 py-16">

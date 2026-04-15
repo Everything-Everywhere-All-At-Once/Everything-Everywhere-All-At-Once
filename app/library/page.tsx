@@ -571,7 +571,7 @@ export default function LibraryPage() {
         </div>
       </nav>
 
-      <div className="flex flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 py-8 gap-6">
+      <div className="flex flex-col md:flex-row flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 py-8 gap-6">
 
         {/* Sidebar */}
         <aside className="hidden md:flex flex-col w-52 shrink-0 gap-0.5">
@@ -674,7 +674,7 @@ export default function LibraryPage() {
                       href={r.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-baseline gap-3 px-3 py-2 rounded transition-all duration-100 -mx-3"
+                      className="group flex items-start gap-3 px-3 py-2.5 rounded transition-all duration-100 -mx-3"
                       onMouseEnter={(e) => {
                         (e.currentTarget as HTMLElement).style.backgroundColor = `${active.accent}08`;
                       }}
@@ -683,15 +683,19 @@ export default function LibraryPage() {
                       }}
                     >
                       <span
-                        className="text-[9px] font-mono shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                        className="text-[9px] font-mono shrink-0 opacity-0 group-hover:opacity-100 transition-opacity mt-0.5"
                         style={{ color: active.accent }}
                       >↗</span>
-                      <span className="text-[11px] font-semibold text-[#d4d4d8] group-hover:text-white transition-colors shrink-0 w-44 truncate">
-                        {r.name}
-                      </span>
-                      <span className="text-[10px] text-[#52525b] group-hover:text-[#71717a] transition-colors leading-relaxed min-w-0 truncate">
-                        {r.description}
-                      </span>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-3">
+                          <span className="text-[11px] font-semibold text-[#d4d4d8] group-hover:text-white transition-colors shrink-0">
+                            {r.name}
+                          </span>
+                          <span className="text-[10px] text-[#52525b] group-hover:text-[#71717a] transition-colors leading-relaxed min-w-0 sm:truncate">
+                            {r.description}
+                          </span>
+                        </div>
+                      </div>
                     </a>
                   ))}
                 </div>
