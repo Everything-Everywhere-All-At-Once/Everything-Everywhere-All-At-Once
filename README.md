@@ -1,12 +1,12 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Everything-Everywhere-All-At-Once/fuzzy-goggles/main/public/logo.png" width="80" height="80" alt="EEAAO logo" />
+<img src="https://raw.githubusercontent.com/Everything-Everywhere-All-At-Once/fuzzy-goggles/main/public/logo.png" width="80" height="80" alt="Everything Everywhere All At Once logo" />
 
 # EVERYTHING EVERYWHERE ALL AT ONCE
 
-<img src="https://img.shields.io/badge/EVERYTHING-FF3399?style=for-the-badge&labelColor=0d0d0d" />
-<img src="https://img.shields.io/badge/EVERYWHERE-00FFFF?style=for-the-badge&labelColor=0d0d0d" />
-<img src="https://img.shields.io/badge/ALL_AT_ONCE-FFFF00?style=for-the-badge&labelColor=0d0d0d&color=FFFF00" />
+<img src="https://img.shields.io/badge/EVERYTHING-FF3399?style=for-the-badge&amp;labelColor=0d0d0d" />
+<img src="https://img.shields.io/badge/EVERYWHERE-00FFFF?style=for-the-badge&amp;labelColor=0d0d0d" />
+<img src="https://img.shields.io/badge/ALL_AT_ONCE-FFFF00?style=for-the-badge&amp;labelColor=0d0d0d&amp;color=FFFF00" />
 
 <br />
 
@@ -14,7 +14,7 @@
 
 <br />
 
-[![Live Site](https://img.shields.io/badge/Live_Site-eeaao--bay.vercel.app-FF3399?style=flat-square&labelColor=0d0d0d)](https://everything-everywhere-all-at-once.vercel.app)
+[![Live Site](https://img.shields.io/badge/Live_Site-everything--everywhere--all--at--once.vercel.app-FF3399?style=flat-square&labelColor=0d0d0d)](https://everything-everywhere-all-at-once.vercel.app)
 [![GitHub Stars](https://img.shields.io/github/stars/Everything-Everywhere-All-At-Once/fuzzy-goggles?style=flat-square&color=FFFF00&labelColor=0d0d0d&logo=github&logoColor=white)](https://github.com/Everything-Everywhere-All-At-Once/fuzzy-goggles/stargazers)
 [![License](https://img.shields.io/badge/License-MIT-C055FF?style=flat-square&labelColor=0d0d0d)](./LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-16-00FFFF?style=flat-square&logo=next.js&logoColor=white&labelColor=0d0d0d)](https://nextjs.org)
@@ -42,8 +42,6 @@
 </tr>
 </table>
 
-<sub></code></sub>
-
 </div>
 
 ---
@@ -67,6 +65,9 @@ A free, open-source browser toolbox. Every single tool runs **100% client-side**
 | **Audio Trimmer** | Cut and split audio files |
 | **Metadata Editor** | Edit ID3 tags & cover art |
 | **Audio Normalizer** | Level out volume across tracks |
+| **BPM Tap Counter** | Tap to find the BPM of any track |
+| **Metronome** | Visual and audio metronome |
+| **Waveform Visualizer** | View audio waveforms in browser |
 
 ### DJ Tools
 | Tool | What it does |
@@ -103,10 +104,8 @@ A free, open-source browser toolbox. Every single tool runs **100% client-side**
 | **PDF Merger** | Combine multiple PDFs |
 | **PDF Splitter** | Split PDF into pages |
 | **OCR** | Image to editable text |
-| **Markdown to PDF** | Render MD as PDF |
 | **DOCX to PDF** | Word documents to PDF |
 | **DOCX to HTML** | Word to clean HTML |
-| **TXT / CSV to PDF** | Plain text to PDF |
 
 ### Cybersecurity
 | Tool | What it does |
@@ -116,8 +115,13 @@ A free, open-source browser toolbox. Every single tool runs **100% client-side**
 | **Password Generator** | Strong random passwords |
 | **Base64 Encoder** | Encode and decode Base64 |
 | **JWT Decoder** | Decode & inspect JWT tokens |
+| **JWT Builder** | Build and sign JWT tokens |
 | **QR Generator** | Create & read QR codes |
 | **Steganography** | Hide messages inside images |
+| **WHOIS Lookup** | Domain registration info |
+| **DNS Lookup** | Query DNS records |
+| **IP / CIDR Calculator** | Subnet and IP range calculator |
+| **robots.txt Analyzer** | Parse and validate robots.txt |
 
 ### AI Tools
 | Tool | What it does |
@@ -132,33 +136,26 @@ A free, open-source browser toolbox. Every single tool runs **100% client-side**
 | Tool | What it does |
 |------|-------------|
 | **Color Palette Generator** | Generate and export palettes |
-| **Font Pairer** | Find matching font combinations |
 | **Moodboard Maker** | Drag-and-drop moodboard builder |
-| **Pattern Generator** | Repeating SVG pattern creator |
 | **Pixel Art Editor** | Browser pixel art canvas |
 
 ### Web Design
 | Tool | What it does |
 |------|-------------|
-| **CSS Gradient Generator** | Visual gradient builder |
-| **Box Shadow Generator** | CSS shadow builder |
-| **SVG Editor** | Edit SVGs in browser |
-| **Meta Tag Generator** | Open Graph and SEO tags |
 | **Favicon Generator** | Make favicons from any image |
-| **Typography Scale** | Modular type scale builder |
-| **Color System** | Design token generator |
+| **Color Contrast Checker** | WCAG contrast ratio checker |
 
 ### Quality of Life
 | Tool | What it does |
 |------|-------------|
-| **JSON Formatter** | Format, validate, diff JSON |
-| **Markdown Editor** | Live preview markdown editor |
-| **Regex Tester** | Build and test regular expressions |
-| **UUID Generator** | Generate UUIDs v1-v7 |
-| **Unit Converter** | Length, weight, temperature, etc. |
 | **Timezone Converter** | Convert times across timezones |
-| **Text Diff** | Compare two blocks of text |
 | **Pomodoro Timer** | Focus timer with sessions |
+| **Timestamp Converter** | Unix ↔ human-readable timestamps |
+| **Cron Expression Builder** | Build and validate cron expressions |
+| **Word Counter** | Count words, chars, sentences |
+| **Lorem Ipsum Generator** | Placeholder text generator |
+| **Aspect Ratio Calculator** | Calculate aspect ratios |
+| **CSV Viewer** | View and sort CSV files in browser |
 
 ---
 
@@ -166,10 +163,10 @@ A free, open-source browser toolbox. Every single tool runs **100% client-side**
 
 <div align="center">
 
-![Next.js](https://img.shields.io/badge/Next.js_16-black?style=for-the-badge&logo=next.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-00FFFF?style=for-the-badge&logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_v4-FF3399?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-FFFF00?style=for-the-badge&logo=vercel&logoColor=black)
+<img src="https://img.shields.io/badge/Next.js_16-black?style=for-the-badge&amp;logo=next.js&amp;logoColor=white" />
+<img src="https://img.shields.io/badge/TypeScript-00FFFF?style=for-the-badge&amp;logo=typescript&amp;logoColor=white" />
+<img src="https://img.shields.io/badge/Tailwind_v4-FF3399?style=for-the-badge&amp;logo=tailwindcss&amp;logoColor=white" />
+<img src="https://img.shields.io/badge/Vercel-FFFF00?style=for-the-badge&amp;logo=vercel&amp;logoColor=black" />
 
 </div>
 
@@ -227,4 +224,3 @@ MIT — see [LICENSE](./LICENSE)
 [![All At Once](https://img.shields.io/badge/All_At_Once-FFFF00?style=flat-square&labelColor=0d0d0d)]()
 
 </div>
-
