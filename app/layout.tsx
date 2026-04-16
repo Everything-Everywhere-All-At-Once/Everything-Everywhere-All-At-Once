@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Everything Everywhere All At Once",
   description: "Every tool you need. One place. Free.",
   manifest: "/manifest.json",
+  icons: { icon: "/logo.png", apple: "/logo.png" },
   appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Everything Everywhere All At Once" },
   other: { "mobile-web-app-capable": "yes" },
 };
